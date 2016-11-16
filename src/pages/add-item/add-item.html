@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+     {{title}} -
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+     <ion-item>
+        <ion-label floating>Title</ion-label>
+        <ion-input type="text" name="title" [(ngModel)]="todo.title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Description</ion-label>
+        <ion-textarea type="text" [(ngModel)]="todo.description"> </ion-textarea>
+      </ion-item>
+
+    <button ion-button block round (click)="save()"> Save </button>
+
+</ion-content>

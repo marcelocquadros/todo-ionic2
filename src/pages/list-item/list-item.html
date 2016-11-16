@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Home Todos
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button clear icon-left (click)="openAddPage()">
+        <ion-icon name="add"></ion-icon> Add New
+       </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2 [hidden]="todos.length">Tap 'Add New' to add a new Todo </h2>
+  <ion-list>
+    <ion-item-sliding *ngFor="let todo of todos" #slidingItem>
+    <button  ion-item (click)="showDetail(todo)">
+      {{todo.title}}
+    </button>
+    <ion-item-options side="right">
+      <button ion-button icon-left color="success" (click)="edit(slidingItem,todo)">
+        <ion-icon name="create"></ion-icon>
+        Edit
+      </button>
+       <button ion-button icon-left color="danger" (click)="remove(slidingItem)">
+        <ion-icon name="trash"></ion-icon>
+        Del
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+  </ion-list>
+</ion-content>
